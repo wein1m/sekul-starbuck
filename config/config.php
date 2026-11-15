@@ -1,6 +1,12 @@
 <?php
 
-$conn = mysqli_connect("localhost", "root", "", "starbuck")
-or die ("Fwailed to connect to dwatabase TT");
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "starbuck";
 
-var_dump($conn);
+$conn = new PDO(
+    'mysql:host=' . $host . ';dbname=' . $database,
+    $username,
+    $password
+);

@@ -5,24 +5,25 @@ include "../../include/header.php"
         <div class="row">
             <div class="col-3"></div>
             <div class="col-6 mt-5">
-                <form class="form-floating" method="POST">
+                <form class="form-floating" action="../../process/process_cashier.php" method="POST">
+                    <input type="hidden" name="action" value="add">
                     <div class="form-floating my-3">
                         <label for="floatingInput">Nama Kasir</label>
-                        <input class="form-control" id="floatingInput" placeholder="wein">
+                        <input name="nama" class="form-control" id="floatingInput" placeholder="wein">
                     </div>
                     <div class="form-floating my-3">
                         <label for="floatingInput">No Telp</label>
-                        <input class="form-control" id="floatingInput" placeholder="wein">
+                        <input name="telp" class="form-control" id="floatingInput" placeholder="wein">
                     </div>
                     <div class="form-floating my-3">
                         <label for="floatingPassword">Alamat</label>
-                        <input class="form-control" id="floatingPassword" placeholder="Password">
+                        <input name="alamat" class="form-control" id="floatingPassword" placeholder="Password">
                     </div>
                     <div class="form-floating my-3">
                         <label for="floatingPassword">Email</label>
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                     </div>
-                    <button type="button" class="btn-solid theme-primary mt-5">Submit</button>
+                    <button type="submit" class="btn-solid theme-success px-5 mt-5">Submit</button>
                 </form>
             </div>
             <div class="col-3"></div>
