@@ -2,7 +2,7 @@
     include "../../include/header.php";
 ?>
 <center>
-    <a href="/starbuck/pages/cashiers/add.php" class="btn-solid theme-success mb-3">Tambah
+    <a href="/sekul-starbuck/pages/cashiers/add.php" class="btn-solid theme-success mb-3">Tambah
         Kasir</a>
 </center>
 <div class="container">

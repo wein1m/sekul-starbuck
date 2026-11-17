@@ -17,8 +17,8 @@ try {
     if ($_POST["action"] == "add") {
         add_kasir($conn, $data);
         $conn->commit();
-        alert("Data has been added~!", "../pages/cashiers/add.php");
-    } 
+        alert("Data has been added~!", "../pages/cashiers/list.php");
+    }
     else if ($_POST["action"] == "edit") {
         edit_kasir($conn, $id_kasir, $data);
         $conn->commit();
@@ -29,7 +29,7 @@ try {
         $conn->commit();
         alert("Data has been deleted~!", "../pages/cashiers/list.php");
     }
-} 
+}
 catch (PDOException $e) {
     $conn->rollBack();
     alert("Uwegghh, i fwailed to save data TT", '../pages/cashiers/add.php');
@@ -53,11 +53,11 @@ function add_kasir($conn, $data) {
 
 function edit_kasir($conn, $id_kasir, $data) {
     $query = "
-        UPDATE Kasir SET 
-        nama_kasir= :nama, 
-        no_telp= :telp, 
-        alamat= :alamat, 
-        email= :email 
+        UPDATE Kasir SET
+        nama_kasir= :nama,
+        no_telp= :telp,
+        alamat= :alamat,
+        email= :email
         WHERE id_kasir= :id_kasir
     ";
 
