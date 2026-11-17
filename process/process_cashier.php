@@ -14,20 +14,24 @@ try {
 
     $id_kasir = $_POST["id_kasir"];
 
-    if ($_POST["action"] == "add") {
-        add_kasir($conn, $data);
-        $conn->commit();
-        alert("Data has been added~!", "../pages/cashiers/list.php");
-    }
-    else if ($_POST["action"] == "edit") {
-        edit_kasir($conn, $id_kasir, $data);
-        $conn->commit();
-        alert("Data has been saved~!", "../pages/cashiers/list.php");
-    }
-    else if ($_POST["action"] == "delete") {
-        delete_kasir($conn, $id_kasir);
-        $conn->commit();
-        alert("Data has been deleted~!", "../pages/cashiers/list.php");
+    switch ($_POST["action"]) {
+        case "add":
+            add_kasir($conn, $data);
+            $conn->commit();
+            alert("Data has been added~!", "../pages/cashiers/list.php");
+        break;
+
+        case "edit":
+            edit_kasir($conn, $id_kasir, $data);
+            $conn->commit();
+            alert("Data has been saved~!", "../pages/cashiers/list.php");
+        break;
+
+        case "delete":
+            delete_kasir($conn, $id_kasir);
+            $conn->commit();
+            alert("Data has been deleted~!", "../pages/cashiers/list.php");
+        break;
     }
 }
 catch (PDOException $e) {
